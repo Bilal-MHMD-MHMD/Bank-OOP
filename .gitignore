@@ -1,0 +1,32 @@
+# Build results
+**/*.obj
+**/*.exe
+**/*.dll
+**/*.pdb
+**/*.ilk
+**/*.lib
+
+# Debug and Release folders
+**/Debug/
+**/Release/
+**/x64/
+**/*.log
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.vcxproj.user
+
+# Temporary files
+*.tmp
+*.bak
+
+# Other
+*.cache
+
+*.ipch
+*.vcxproj.user
+*.vcxproj.filters
+*.vcxproj
+
