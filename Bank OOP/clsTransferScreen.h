@@ -8,20 +8,20 @@ class clsTransferScreen : protected clsClientScreens
 
 	static double _ReadAmount(clsBankClient SourceClient)
 	{ 
-		float amount = 0;
+		double amount = 0;
 		
 			cout << "\nEnter the Amount to Transfer";
-			amount = clsInputValidate::ReadNumber<float>();
+			amount = clsInputValidate::ReadNumber<double>();
 
 			while (SourceClient.Balance < amount)
 		 {
 			 cout << "\nAmount Exceeds the Balance, Enter another Amount";
-			 amount = clsInputValidate::ReadNumber<float>();
+			 amount = clsInputValidate::ReadNumber<double>();
 		 }
 		return amount;
 	} 
 
-	static void _FillTransferRecord(clsBankClient::stTransferRecord& Record, clsBankClient SourceClient, clsBankClient DestinationClient, float Amount)
+	static void _FillTransferRecord(clsBankClient::stTransferRecord& Record, clsBankClient SourceClient, clsBankClient DestinationClient, double Amount)
 	{
 		Record.DateTime = clsDate::DateToString(clsDate::GetSystemDateTimeString());
 		Record.FromAccountNumber = SourceClient.AccountNumber;
@@ -47,7 +47,7 @@ static	void ShowTransferScreen()
 
 	_PrintClientCard(SourceClient);
 
-	float amount = _ReadAmount(SourceClient);
+	double amount = _ReadAmount(SourceClient);
 	
 
 	cout << "\nEnter Account Number to Transfer to : \n";

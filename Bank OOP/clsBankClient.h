@@ -20,7 +20,7 @@ private:
 
     string _AccountNumber;
     string _PinCode;
-    float _Balance;
+    double _Balance;
     bool _markForDelete = false;
 
     static clsBankClient _ConvertLinetoClientObject(string Line, string Seperator = " #//# ")
@@ -153,16 +153,16 @@ public:
     }
     __declspec(property(get = GetPinCode, put = SetPinCode)) string PinCode;
 
-    float GetBalance()
+    double GetBalance()
     {
         return _Balance;
     }
 
-    void SetBalance(float Balance)
+    void SetBalance(double Balance)
     {
         this->_Balance = Balance;
     }
-    __declspec(property(get = GetBalance, put = SetBalance)) float Balance;
+    __declspec(property(get = GetBalance, put = SetBalance)) double Balance;
 
     static clsBankClient Find(string AccountNumber)
     {
@@ -324,9 +324,9 @@ public:
         string DateTime;
         string FromAccountNumber;
         string ToAccountNumber;
-        float Amount;
-        float FromAccountBalanceAfterTransfer;
-        float ToAccountBalanceAfterTransfer;
+        double Amount;
+        double FromAccountBalanceAfterTransfer;
+        double ToAccountBalanceAfterTransfer;
         string AdminUserName;
     };
     static void AddTransferRecordToFile(stTransferRecord& TransferRecord)

@@ -131,6 +131,12 @@ protected:
         {
             Permissions += clsUser::enPermissions::pLoginRegister;
         }
+        cout << "\n Currency Exchange  Screen ? y/n? ";
+        cin >> Answer;
+        if (Answer == 'y' || Answer == 'Y')
+        {
+            Permissions += clsUser::enPermissions::pCurrencyExchange;
+        }
         return Permissions;
 
     } 
